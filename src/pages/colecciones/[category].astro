@@ -1,0 +1,46 @@
+---
+import springSummer from "../../content/spring-summer.json";
+import autumnWinter from "../../content/autumn-winter.json";
+import laminates from "../../content/laminates.json";
+import Layout from "../../layouts/Layout.astro";
+import Collection from "./_components/Collection.astro";
+
+export async function getStaticPaths() {
+  return [
+    { 
+      params: { category: "primavera-verano"}, 
+      props: { title: "Primavera/Verano", collections: springSummer}
+    },
+    { 
+      params: { category: "otono-invierno"}, 
+      props: { title: "Otoño/Invierno", collections: autumnWinter }
+    },
+     { 
+      params: { category: "laminados"},
+      props: { title: "Laminados", collections: laminates }
+    },
+  ]
+}
+
+const { title, collections } = Astro.props;
+---
+
+<Layout title={`${title} | Arbicuir, S.L.`} description="">
+  <main class="max-w-screen-xl px-8 mx-auto">
+    <h2 class="text-lg sm:text-xl">Colecciones</h2>
+    <h1 class="mt-2 text-3xl text-ac-light font-display sm:text-4xl">
+      {title}
+    </h1>
+
+    {collections.map((collection) => (
+      <section class="mt-10 sm:mt-14">
+        {collections.length > 1 && (
+          <h2 class="mb-5 text-2xl font-display text-ac-light">
+            {collection.title}
+          </h2>
+        )}
+        <Collection {collection} />
+      </section>
+    ))}
+  </main>
+</Layout>

@@ -1,0 +1,35 @@
+---
+  import NavLink from "./NavLink.astro";
+  import CollectionsDropdown from "./CollectionsDropdown.svelte";
+---
+
+<ul class="hidden gap-4 items-center md:flex lg:gap-10">
+  <CollectionsDropdown 
+    collections={[
+    { 
+      title: "Primavera/Verano",
+      href: "/colecciones/primavera-verano",
+    },
+    { 
+      title: "Otoño/Invierno",
+      href: "/colecciones/otono-invierno",
+    },
+    { 
+      title: "Laminados",
+      href: "/colecciones/laminados",
+    }
+  ]}
+  client:media="(min-width: 768px)" />
+  <NavLink 
+    href="/grabados"
+    title="Grabados"
+  />
+  <NavLink 
+    href="/sobre-nosotros"
+    title="Sobre Nosotros"
+  />
+  <NavLink 
+    href="/contacto"
+    title="Contacto"
+  />
+</ul>

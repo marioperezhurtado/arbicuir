@@ -1,0 +1,18 @@
+{
+  "card1": {
+    "src": "https://res.cloudinary.com/marioperezhurtado/image/upload/v1690296343/arbicuir/cards/plata.png",
+    "alt": "Plata"
+  },
+  "card2": {
+    "src": "https://res.cloudinary.com/marioperezhurtado/image/upload/v1690296343/arbicuir/cards/manzana.png",
+    "alt": "Manzana"
+  },
+  "card3": {
+    "src": "https://res.cloudinary.com/marioperezhurtado/image/upload/v1690296343/arbicuir/cards/fuchsia.png",
+    "alt": "Fuchsia"
+  },
+  "card4": {
+    "src": "https://res.cloudinary.com/marioperezhurtado/image/upload/v1690296343/arbicuir/cards/amarillo.png",
+    "alt": "Amarillo"
+  }
+}

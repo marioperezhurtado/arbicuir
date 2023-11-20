@@ -1,0 +1,84 @@
+---
+import Footer from '../pages/_components/Footer.astro'
+import Header from '../pages/_components/header/Header.astro'
+import CursorTrail from '../pages/_components/CursorTrail.svelte'
+import ScrollTop from '../pages/_components/ScrollTop.svelte'
+interface Props {
+  title: string
+  description: string
+  image?: string
+}
+
+const canonicalURL = new URL(Astro.url);
+
+const { title, description, image = 'temp' } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="es" class="overflow-hidden scroll-smooth">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" type="image/svg" />
+    <meta property="site_name" content="arbicuir.es" />
+    <meta name="author" content="Mario Pérez Hurtado" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+  </head>
+  <body
+    class="flex flex-col justify-between h-screen overflow-auto bg-ac-dark
+    text-ac-light-2 font-body">
+    <div>
+      <Header />
+      <slot />
+    </div>
+    <Footer />
+    <style is:global>
+      @font-face {
+        font-family: 'Body';
+        src: url('/fonts/body.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Display';
+        src: url('/fonts/display.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      /* remove tap highlight on mobile */
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+  </body>
+  <CursorTrail
+    text={`Arbicuir S.L. • Desde 1995 •`}
+    client:media="(min-width: 1024px)"
+  />
+  <ScrollTop client:idle />
+</html>

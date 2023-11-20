@@ -1,0 +1,63 @@
+---
+import engravingData from '../../content/engravings.json';
+import Layout from '../../layouts/Layout.astro'
+import EngravingCategory from './_components/EngravingCategory.astro';
+import Engravings from './_components/Engravings.astro';
+
+export async function getStaticPaths() {
+  return [
+    { params: { category: undefined } },
+    { params: { category: "serpientes" } },
+    { params: { category: "cocos" } },
+    { params: { category: "naturales" } },
+    { params: { category: "varios" } },
+  ]
+}
+
+const { category = "serpientes" } = Astro.params;
+
+const engravings = engravingData.filter(({ title }) => title === category);
+---
+
+<Layout
+  title="Grabados • Arbicuir S.L."
+  description="Descubre nuestra amplia gama de grabados, con más de 120 diseños únicos para adaptarnos a tus necesidades."
+>
+  <main class="max-w-screen-lg mx-auto px-6 sm:px-8">
+    <h1 class="text-ac-light font-display text-3xl sm:text-4xl mt-2">
+      Grabados
+    </h1>
+    <p class="text-ac-light-2 mt-3 max-w-prose">
+      Descubre nuestra amplia gama de grabados, con más de
+      <strong class="text-ac-light">
+        120 diseños
+      </strong>
+      únicos para adaptarnos a tus necesidades.
+    </p>
+
+    <ul class="flex gap-2 sm:gap-4 text-ac-light mt-10 text-sm">
+      <EngravingCategory
+        title="Serpientes"
+        href="/grabados/serpientes"
+        selected={category === "serpientes"}
+      />
+      <EngravingCategory
+        title="Cocos"
+        href="/grabados/cocos"
+        selected={category === "cocos"}
+      />
+      <EngravingCategory
+        title="Naturales"
+        href="/grabados/naturales"
+        selected={category === "naturales"}
+      />
+      <EngravingCategory
+        title="Varios"
+        href="/grabados/varios"
+        selected={category === "varios"}
+      />
+    </ul>
+
+    <Engravings engravings={engravings[0]!.engravings} />
+  </main>
+</Layout>

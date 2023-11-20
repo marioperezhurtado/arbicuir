@@ -1,0 +1,95 @@
+---
+import showcase from "../content/showcase.json";
+import Layout from "../layouts/Layout.astro";
+import ButtonLink from "../components/ButtonLink.astro";
+import ImageComparisonSlider from "./_components/ImageComparisonSlider.svelte";
+import ProductSlider from "./_components/ProductSlider.svelte";
+import CardDeck from "./_components/CardDeck.astro";
+---
+
+<Layout
+  title="Arbicuir S.L. • Acabados de pieles y materiales para calzado y marroquinería en Alicante."
+  description="Desde 1995, nos dedicamos al acabado de pieles y sintéticos, trabajando con el objetivo de ofrecer una gran variedad de diseños innovadores y de calidad."
+>
+  <main class="px-6 mx-auto max-w-screen-lg sm:px-8">
+    <section class="flex flex-col gap-14 justify-between md:flex-row">
+      <div>
+        <h1
+          class="max-w-xl text-3xl sm:text-4xl lg:text-5xl text-ac-light font-display">
+          Acabados de pieles y materiales para calzado y marroquinería.
+        </h1>
+        <p class="mt-10 mb-5 max-w-prose">
+          Desde
+          <strong class="text-ac-light">
+            1995
+          </strong>
+          , nos dedicamos al acabado de pieles y sintéticos, trabajando con el
+          objetivo de ofrecer una gran variedad de diseños innovadores y de
+          calidad.
+        </p>
+        <ButtonLink 
+          title="Descubre nuestras colecciones" 
+          href="/colecciones/primavera-verano"
+        />
+      </div>
+      <ImageComparisonSlider
+        beforeImage="https://res.cloudinary.com/marioperezhurtado/image/upload/v1690637121/arbicuir/comparison/before.png",         
+        afterImage="https://res.cloudinary.com/marioperezhurtado/image/upload/v1690637121/arbicuir/comparison/after.png",
+        client:media="(min-width: 768px)"
+      />
+    </section>
+
+    <section class="flex flex-col-reverse gap-10 mt-20 md:flex-row">
+      <ProductSlider products={showcase} client:idle />
+
+      <div class="w-72 min-w-[18rem]">
+        <h2 class="mb-2 text-2xl font-display text-ac-light">
+          Laminados, grabados y acabados de alta calidad.
+        </h2>
+        <ButtonLink
+          title="Ver más"
+          href="/grabados"
+        />
+      </div>
+    </section>
+
+    <section class="flex flex-col-reverse gap-10 mt-32 sm:gap-16 md:flex-row">
+      <CardDeck />
+      <div class="w-fit">
+        <h2 class="mb-2 text-2xl font-display text-ac-light">
+          Gran variedad de acabados de fantasía.
+        </h2>
+        <p class="mt-5 mb-5 max-w-prose">
+          Disponemos de una amplia gama de grabados y acabados en distintos colores para todo tipo de pieles y materiales. Nuestro equipo de profesionales se encargará de asesorarte en todo momento para que puedas personalizar tus productos.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="flex flex-col gap-10 justify-between p-6 mt-32 rounded-md shadow-md sm:flex-row sm:p-8 bg-ac-dark-2">
+      <div>
+        <h2 class="mb-2 text-2xl font-display text-ac-light">
+          Experiencia, trayectoria y profesionalidad.
+        </h2>
+        <p class="mt-5 mb-5 max-w-prose">
+          Con más de
+          <strong class="text-ac-light">
+            28
+          </strong>
+          años de experiencia en el sector, en Arbicuir buscamos siempre la mejor calidad en nuestros productos y la excelencia en nuestros servicios.
+        </p>
+        <ButtonLink
+          title="Descubre nuestra historia"
+          href="/sobre-nosotros"
+        />
+      </div>
+      <div class="overflow-hidden w-56 rounded-md shadow-md min-w-fit h-fit">
+        <img
+          src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1690637028/arbicuir/audited-temp.jpg"
+          alt="Certificado Leather Working Group"
+          class="object-cover w-56"
+        />
+      </div>
+    </section>
+  </main>
+</Layout>

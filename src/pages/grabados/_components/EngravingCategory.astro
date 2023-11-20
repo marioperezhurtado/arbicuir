@@ -1,0 +1,19 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  selected: boolean;
+}
+
+const { href, title, selected } = Astro.props;
+---
+
+<li>
+  <a
+    {href}
+    class={`px-3 pt-2.5 pb-1.5 transition rounded-md shadow-md bg-ac-dark-2
+    hover:brightness-125 ${selected ? "bg-ac-light-2 text-ac-dark" : ""}`}
+  >
+    {title}
+  </a> 
+</li>

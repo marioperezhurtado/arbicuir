@@ -1,0 +1,24 @@
+---
+import Navbar from "./Navbar.astro";
+import MobileMenu from "./MobileMenu.svelte";
+---
+
+<header
+  class="sticky top-0 z-20 mb-10 w-full bg-opacity-90 shadow-md sm:mb-14 bg-ac-dark backdrop-blur-sm"
+>
+  <div
+    class="flex justify-between items-center py-1 px-4 mx-auto max-w-screen-xl sm:px-8"
+  >
+    <a href="/" class="block py-1">
+      <img
+       src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1690638398/arbicuir/logo-arbicuir-2.png"
+        alt="Arbicuir logo"
+        class="w-14 transition-all"
+      />
+    </a>
+    <nav class="flex gap-4 justify-end items-center pt-1 w-full lg:gap-10">
+      <Navbar />
+      <MobileMenu client:media="(max-width: 767px)" />
+    </nav>
+  </div>
+</header>

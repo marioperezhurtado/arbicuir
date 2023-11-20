@@ -1,0 +1,23 @@
+---
+import engravingData from '../../../content/engravings.json';
+
+interface Props {
+  engravings: typeof engravingData[number]["engravings"];
+}
+
+const { engravings } = Astro.props;
+---
+
+<section class="grid w-full grid-cols-2 gap-3 text-center sm:grid-cols-3 md:grid-cols-4 sm:gap-4 mt-14"
+>
+  {engravings.map((engraving) => (
+    <div class="h-fit overflow-hidden rounded-md shadow-md">
+      <img
+        src={engraving.preview}
+        alt={engraving.title}
+        class="object-cover w-full duration-500 rounded-md aspect-video
+        hover:scale-110"
+      />
+    </div>
+  ))}
+</section>

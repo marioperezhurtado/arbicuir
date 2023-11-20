@@ -1,0 +1,22 @@
+---
+  import { card1, card2, card3, card4 } from "../../content/cards.json";
+---
+
+<div class="relative pt-2 pl-10 w-60 h-52">
+  <div
+    class="overflow-hidden absolute top-4 left-20 w-32 h-44 rounded-md shadow-md transition duration-300 origin-bottom rotate-12 hover:rotate-[18deg]">
+    <img src={card4.src} alt={card4.alt} class="w-full h-full" />
+  </div>
+  <div
+    class="overflow-hidden absolute left-16 w-32 h-44 rounded-md shadow-md transition duration-300 origin-bottom rotate-6 hover:rotate-12">
+    <img src={card3.src} alt={card3.alt} class="w-full h-full" />
+  </div>
+  <div
+    class="overflow-hidden absolute left-12 w-32 h-44 rounded-md shadow-md transition duration-300 origin-bottom -rotate-6 hover:-rotate-0">
+    <img src={card2.src} alt={card2.alt} class="w-full h-full" />
+  </div>
+  <div
+    class="overflow-hidden absolute top-4 left-8 w-32 h-44 rounded-md shadow-md transition duration-300 origin-bottom -rotate-12">
+    <img src={card1.src} alt={card1.alt} class="w-full h-full" />
+  </div>
+</div>

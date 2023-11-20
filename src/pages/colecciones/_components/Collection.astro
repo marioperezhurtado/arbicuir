@@ -1,0 +1,42 @@
+---
+interface Props {
+  collection: {
+    colors: { title: string; url: string }[]
+    engravings: { title: string; url: string }[]
+  }
+}
+
+const {collection: { engravings, colors }} = Astro.props
+---
+
+<div class="flex flex-col gap-10 xs:flex-row">
+  <div class="flex flex-col gap-3 text-center sm:gap-4 text-ac-light">
+    {engravings.map(({ url, title }) => (
+        <div>
+          <div class="overflow-hidden rounded-md shadow-md sm:w-52 md:w-72 aspect-video">
+            <img
+              src={url}
+              alt={title}
+              class="object-cover w-full rounded-md duration-500 hover:scale-110 aspect-video"
+            />
+          </div>
+          <h2 class="mt-3">{title}</h2>
+        </div>
+    ))}
+  </div>
+  <div
+    class="grid grid-cols-3 gap-3 w-full text-center sm:gap-4 md:grid-cols-4 lg:grid-cols-5">
+    {colors.map(({ url, title }) => (
+        <div class="h-fit">
+          <div class="overflow-hidden rounded-md shadow-md">
+            <img
+              src={url}
+              alt={title}
+              class="object-cover w-full rounded-md duration-500 hover:scale-110 aspect-video"
+            />
+          </div>
+          <h2 class="mt-2">{title}</h2>
+        </div>
+    ))}
+  </div>
+</div>

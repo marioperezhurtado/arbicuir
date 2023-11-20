@@ -1,0 +1,100 @@
+---
+import { ADDRESS, EMAIL, PHONE } from '../../utils/consts'
+
+const currentYear = new Date().getFullYear()
+---
+
+<footer class="mt-32 w-full text-center shadow-md bg-ac-darkblue xs:text-left">
+  <div
+    class="flex flex-col gap-10 justify-between px-4 my-4 mx-auto w-full max-w-screen-lg sm:px-8 md:flex-row md:my-10">
+    <div class="mx-auto xs:mx-0">
+      <a href="/" class="block py-1">
+        <img
+          src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1690638398/arbicuir/logo-arbicuir.png"
+          alt="Arbicuir logo"
+          class="w-24"
+        />
+      </a>
+    </div>
+    <div
+      class="flex flex-col flex-1 gap-6 justify-start md:gap-14 md:justify-end xs:flex-row xs:gap-8">
+      <div class="md:w-52">
+        <h3 class="font-display text-ac-light">
+          Dónde encontrarnos
+        </h3>
+        <p class="mx-auto mt-2 max-w-xs text-sm xs:mx-0">{ADDRESS}</p>
+      </div>
+      <div>
+        <h3 class="font-display text-ac-light">
+          Contacto
+        </h3>
+        <div class="mt-2 text-sm">
+          <a
+            href=`mailto:${EMAIL}`
+            class="block underline transition hover:text-ac-light">
+            {EMAIL}
+          </a>
+          <a
+            href=`tel:${PHONE}`
+            class="block underline transition hover:text-ac-light">
+            {PHONE}
+          </a>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-display text-ac-light">
+          Síguenos
+        </h3>
+        <div class="mt-2 text-sm">
+          <a
+            href="https://m.facebook.com/people/ARBICUIRsl/100064966725589/"
+            target="_blank"
+            class="block underline transition hover:text-ac-light">
+            Facebook
+          </a>
+          <a
+            href="https://www.instagram.com/arbicuirsl/"
+            target="_blank"
+            class="block underline transition hover:text-ac-light">
+            Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-4 text-sm bg-ac-dark-2">
+    <div
+      class="flex flex-col gap-2 justify-between items-center px-4 mx-auto w-full max-w-screen-lg sm:px-8 xs:flex-row">
+      <p class="pt-1.5">
+        © {currentYear} ARBICUIR S.L. Todos los derechos reservados.
+      </p>
+      <ul class="flex gap-1 items-center">
+        <li>
+          <a
+            href="https://m.facebook.com/people/ARBICUIRsl/100064966725589/"
+            target="_blank"
+          >
+            <img
+              src="/icons/facebook.svg"
+              alt="Facebook Arbicuir S.L."
+              class="h-8"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/arbicuirsl/"
+            target="_blank"
+          >
+            <img
+              src="/icons/instagram.svg"
+              alt="Instagram Arbicuir S.L."
+              class="h-8"
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
