@@ -47,8 +47,7 @@ const { title, description, image = 'temp' } = Astro.props
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
   </head>
   <body
-    class="flex flex-col justify-between h-screen overflow-auto bg-ac-dark
-    text-ac-light-2 font-body">
+    class="flex overflow-auto flex-col justify-between h-screen bg-ac-dark text-ac-light-2 font-body">
     <div>
       <Header />
       <slot />
