@@ -15,7 +15,7 @@
     class="fixed top-0 left-0 z-30 w-screen h-screen bg-black bg-opacity-50"
   />
   <div
-    in:scale={{ start: 0.8, duration: 400 }}
+    in:scale={{ start: 0.8, duration: 300 }}
     class="overflow-hidden relative z-30 mx-auto rounded-md shadow-md w-fit"
   >
     <img

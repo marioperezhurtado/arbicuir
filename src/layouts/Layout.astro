@@ -1,8 +1,8 @@
 ---
 import Footer from '../pages/_components/Footer.astro'
 import Header from '../pages/_components/header/Header.astro'
-import CursorTrail from '../pages/_components/CursorTrail.svelte'
 import ScrollTop from '../pages/_components/ScrollTop.svelte'
+
 interface Props {
   title: string
   description: string
@@ -11,16 +11,19 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url);
 
-const { title, description, image = 'temp' } = Astro.props
+const DEFAULT_IMAGE =
+"https://res.cloudinary.com/marioperezhurtado/image/upload/v1700564409/arbicuir/social-image.webp"
+
+const { title, description, image = DEFAULT_IMAGE } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="es" class="overflow-hidden scroll-smooth">
+<html lang="es" class="overflow-auto scroll-smooth">
   <head>
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" href="/favicon.svg" type="image/svg" />
+    <link rel="icon" type="image/webp" href="https://res.cloudinary.com/marioperezhurtado/image/upload/v1700561622/arbicuir/favicon.webp"/>
     <meta property="site_name" content="arbicuir.es" />
     <meta name="author" content="Mario Pérez Hurtado" />
 
@@ -75,9 +78,5 @@ const { title, description, image = 'temp' } = Astro.props
       }
     </style>
   </body>
-  <CursorTrail
-    text={`Arbicuir S.L. • Desde 1995 •`}
-    client:media="(min-width: 1024px)"
-  />
   <ScrollTop client:idle />
 </html>
