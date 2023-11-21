@@ -1,44 +1,55 @@
-# Astro Starter Kit: Basics
+# Arbicuir, S.L. Website
 
-```sh
-npm create astro@latest -- --template basics
+## Table of contents
+
+- [Tech and tools](#tech-and-tools)
+- [Project structure](#project-structure)
+- [Installation](#installation)
+- [Commands](#commands)
+
+## Tech and tools
+
+- [Astro](https://astro.build/): Web framework for building performant content-focused websites.
+- [Svelte](https://svelte.dev/): Front-end library that compiles declarative components into fast and lean web apps. 
+- [TailwindCSS](https://tailwindcss.com/): Utility-first, component driven CSS framework.
+
+## Project structure
+
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
 /
 ├── public/
-│   └── favicon.svg
+│   └── Static assets to be served.
 ├── src/
-│   ├── components/
-│   │   └── Card.astro
+│   ├── content/
+│   │   └── Content data.
+│   ├── ui/
+│   │   └── Reusable UI components.
 │   ├── layouts/
-│   │   └── Layout.astro
+│   │   └── Layouts.
+│   └── utils/
+│       └── Helper functions and shared constants.
 │   └── pages/
-│       └── index.astro
-└── package.json
+│       └── Pages and co-located components and files.
+└── Config files
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Installation
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Clone this repository:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```
+git clone https://github.com/marioperezhurtado/arbicuir.git
+cd arbicuir
+```
 
-## 🧞 Commands
+Install dependencies:
 
-All commands are run from the root of the project, from a terminal:
+```
+npm install
+```
+
+
+## Commands
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -49,6 +60,4 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[Astro Docs](https://docs.astro.build)
