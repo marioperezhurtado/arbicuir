@@ -10,7 +10,7 @@
 <div class="h-fit">
   <button
     on:click={() => (expanded = !expanded)}
-    class="block overflow-hidden rounded-md shadow-md"
+    class="block overflow-hidden w-full rounded-md shadow-md aspect-video"
   >
     <img
       src={engraving.preview}

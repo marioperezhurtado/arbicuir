@@ -1,5 +1,6 @@
 ---
 import showcase from "../content/showcase.json";
+import { EXPERIENCE } from "../utils/consts";
 import Layout from "../layouts/Layout.astro";
 import ButtonLink from "../components/ButtonLink.astro";
 import ImageComparisonSlider from "./_components/ImageComparisonSlider.svelte";
@@ -74,7 +75,7 @@ import CardDeck from "./_components/CardDeck.astro";
         <p class="mt-5 mb-5 max-w-prose">
           Con más de
           <strong class="text-ac-light">
-            28
+            {EXPERIENCE}
           </strong>
           años de experiencia en el sector, en Arbicuir buscamos siempre la mejor calidad en nuestros productos y la excelencia en nuestros servicios.
         </p>

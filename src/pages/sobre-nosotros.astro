@@ -1,19 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { ADDRESS, EXPERIENCE } from "../utils/consts";
 ---
 
 <Layout 
   title="Sobre Nosotros | Arbicuir S.L.",
-  description="Somos una empresa joven, creada en 1995, por Juan José Arbizu Urdiain, en fase de expansión y consolidación, dedicada al acabado de pieles y sintéticos."
+  description="Fundada en 1995 por Juan José Arbizu Urdiain, Arbicuir es una empresa consolidada en el sector del acabado de pieles y sintéticos."
 >
-  <main class="px-6 mx-auto max-w-screen-lg sm:px-8">
-    <h1 class="text-3xl sm:text-4xl font-display text-ac-light">
-      Sobre Nosotros
-    </h1>
+  <main class="px-6 mx-auto max-w-4xl sm:px-8">
+    <img
+  src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1700737657/arbicuir/factory.webp"
+    alt=`Fábrica de Arbicuir, ${ADDRESS}`
+    class="object-cover object-center mt-10 w-full rounded-md shadow-md sm:h-96"
+    />
 
-    <ul class="flex flex-col gap-8 mt-8 max-w-prose text-ac-light-2">
+    <ul class="flex flex-col gap-12 mt-16 max-w-prose text-ac-light-2">
       <li class="flex flex-col gap-3">
-        <h2 class="text-lg text-ac-light font-display">Nuestra historia</h2>
+        <div class="flex gap-2.5 items-center">
+          <img 
+            src="/icons/history.svg" 
+            alt="Nuestra historia" 
+            class="w-5 h-5 mb-1"
+          />
+          <h2 class="text-xl text-ac-light font-display">Nuestra historia</h2>
+        </div>
         <p>
           Fundada en 1995 por Juan José Arbizu Urdiain, Arbicuir es una empresa
       consolidada en el sector del acabado de pieles y sintéticos.
@@ -24,16 +34,30 @@ import Layout from "../layouts/Layout.astro";
       </li>
       
       <li class="flex flex-col gap-3">
-        <h2 class="text-lg text-ac-light font-display">Equipo humano</h2>
+        <div class="flex gap-2.5 items-center">
+          <img 
+            src="/icons/team.svg" 
+            alt="Equipo humano" 
+            class="w-5 h-5 mb-1"
+          />
+          <h2 class="text-xl text-ac-light font-display">Equipo humano</h2>
+        </div>
         <p>
           El equipo humano formado en Arbicuir cuenta con una alta especialización en el mundo del acabado, capaz de adaptarse a las distintas necesidades de los diferentes mercados.
         </p>
       </li>
 
       <li class="flex flex-col gap-3">
-        <h2 class="text-lg text-ac-light font-display">Nuestra misión</h2>
+        <div class="flex gap-2.5 items-center">
+          <img 
+            src="/icons/mission.svg" 
+            alt="Nuestra misión"
+            class="w-5 h-5 mb-1"
+          />
+          <h2 class="text-xl text-ac-light font-display">Nuestra misión</h2>
+        </div>
         <p>
-          En Arbicuir trabajamos constantemente con el objectivo de ofrecer a nuestros clientes los diseños más avanzados, buscando siempre la excelencia en nuestros servicios y el arte en nuestros acabados.
+          Con más de {EXPERIENCE} años de experiencia en el sector, en Arbicuir trabajamos constantemente con el objectivo de ofrecer a nuestros clientes los diseños más avanzados, buscando siempre la excelencia en nuestros servicios y el arte en nuestros acabados.
         </p>
       </li>
    </ul>
