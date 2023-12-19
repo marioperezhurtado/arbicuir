@@ -8,7 +8,8 @@ export async function getStaticPaths() {
   return [
     { params: { category: undefined } },
     { params: { category: "serpientes" } },
-    { params: { category: "cocos" } }, { params: { category: "naturales" } },
+    { params: { category: "cocos" } }, 
+    { params: { category: "naturales" } },
     { params: { category: "varios" } },
   ]
 }
@@ -16,6 +17,7 @@ export async function getStaticPaths() {
 const { category = "serpientes" } = Astro.params;
 
 const engravings = engravingData.filter(({ title }) => title === category);
+const categories = engravingData.map(({ title }) => title);
 ---
 
 <Layout
@@ -35,27 +37,14 @@ const engravings = engravingData.filter(({ title }) => title === category);
     </p>
 
     <ul class="flex gap-2 mt-10 text-sm sm:gap-4 text-ac-light">
-      <Category
-        title="Serpientes"
-        href="/grabados/serpientes"
-        selected={category === "serpientes"}
-      />
-      <Category
-        title="Cocos"
-        href="/grabados/cocos"
-        selected={category === "cocos"}
-      />
-      <Category
-        title="Naturales"
-        href="/grabados/naturales"
-        selected={category === "naturales"}
-      />
-      <Category
-        title="Varios"
-        href="/grabados/varios"
-        selected={category === "varios"}
-      />
-    </ul>
+      {categories.map((c) => (
+        <Category
+          title={c.slice(0, 1).toUpperCase() + c.slice(1)}
+          href={`/grabados/${c}`}
+          selected={category === c}
+        />
+      ))}
+   </ul>
 
     <section class="grid grid-cols-2 gap-3 mt-14 w-full text-center sm:grid-cols-3 sm:gap-4 md:grid-cols-4"
     >
