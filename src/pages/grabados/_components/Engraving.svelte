@@ -18,7 +18,10 @@
   }
 
   onMount(() => {
-    expanded = window.location.search.includes(engraving.title);
+    const urlParams = new URLSearchParams(window.location.search);
+    const engravingParam = urlParams.get("grabado") || "";
+
+    expanded = decodeURIComponent(engravingParam) === engraving.title;
   });
 </script>
 
