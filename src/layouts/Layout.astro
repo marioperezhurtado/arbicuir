@@ -10,7 +10,7 @@ interface Props {
   favicon?: string
 }
 
-const canonicalURL = new URL(Astro.url);
+const SITE_URL = "https://arbicuir.com";
 
 const DEFAULT_IMAGE =
 "https://res.cloudinary.com/marioperezhurtado/image/upload/v1700737657/arbicuir/social-image.webp"
@@ -33,11 +33,11 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" type="image/webp" href={favicon}/>
-    <meta property="site_name" content="arbicuir.es" />
+    <meta property="site_name" content="arbicuir.com" />
     <meta name="author" content="Mario Pérez Hurtado" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href={canonicalURL} />
+    <link rel="canonical" href={SITE_URL} />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>
@@ -46,17 +46,17 @@ const {
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={SITE_URL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:image" content={image} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:url" content={SITE_URL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+    <meta property="twitter:image" content={image} />
   </head>
   <body
     class="flex overflow-auto flex-col justify-between h-screen bg-ac-dark text-ac-light-2 font-body">
