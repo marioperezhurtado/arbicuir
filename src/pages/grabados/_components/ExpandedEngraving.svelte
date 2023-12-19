@@ -4,14 +4,14 @@
   import type { Engraving } from "./types.ts";
 
   export let engraving: Engraving;
-  export let expanded: boolean;
+  export let onClose: () => void;
 </script>
 
 <div
   class="flex fixed top-0 left-0 z-30 justify-center items-center w-screen h-screen"
 >
   <button
-    on:click={() => (expanded = false)}
+    on:click={onClose}
     class="fixed top-0 left-0 z-30 w-screen h-screen bg-black bg-opacity-50"
   />
   <div
@@ -29,7 +29,7 @@
       {engraving.title}
     </p>
     <button
-      on:click={() => (expanded = false)}
+      on:click={onClose}
       class="absolute top-2 right-2 transition hover:brightness-125"
     >
       <img src="/icons/close.svg" alt="Close" class="w-9 h-9" />
