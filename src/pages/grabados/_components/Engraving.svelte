@@ -8,7 +8,7 @@
   let expanded = false;
 
   function handleClose() {
-    history.pushState({}, "", "/grabados");
+    history.pushState({}, "", window.location.pathname);
     expanded = false;
   }
 
