@@ -1,8 +1,9 @@
 <script lang="ts">
-  import Dropdown from '../../../components/Dropdown.svelte'
+  import { fade, slide } from "svelte/transition";
+  import Dropdown from "../../../components/Dropdown.svelte";
 
-  let isOpen = false
-  let collectionsOpen = false
+  let isOpen = false;
+  let collectionsOpen = false;
 
   const collections = [
     {
@@ -25,6 +26,8 @@
     <img src="/icons/menu.svg" alt="Abrir menú" width="32" height="32" />
     {#if isOpen}
       <div
+        in:fade={{ duration: 200 }}
+        out:fade={{ duration: 100 }}
         class="fixed left-0 top-16 w-screen h-screen bg-black bg-opacity-50"
       />
     {/if}
@@ -50,7 +53,11 @@
             class="transition duration-300"
           />
         </div>
-        <ul slot="content" class="w-screen text-sm bg-neutral-600">
+        <ul
+          in:slide={{ duration: 200 }}
+          slot="content"
+          class="w-screen text-sm bg-neutral-600"
+        >
           {#each collections as item}
             <li>
               <a href={item.url} class="block px-4 pt-4 pb-2.5 pl-8">
@@ -62,9 +69,7 @@
       </Dropdown>
     </li>
     <li>
-      <a href="/grabados" class="block px-5 pt-5 pb-3.5">
-        Grabados
-      </a>
+      <a href="/grabados" class="block px-5 pt-5 pb-3.5"> Grabados </a>
     </li>
     <li>
       <a href="/sobre-nosotros" class="block px-5 pt-5 pb-3.5">
@@ -72,9 +77,7 @@
       </a>
     </li>
     <li>
-      <a href="/contacto" class="block px-5 pt-5 pb-3.5">
-        Contacto
-      </a>
+      <a href="/contacto" class="block px-5 pt-5 pb-3.5"> Contacto </a>
     </li>
   </ul>
 </Dropdown>

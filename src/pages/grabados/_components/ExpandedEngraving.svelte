@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { scale } from "svelte/transition";
+  import { fade, scale } from "svelte/transition";
   import Ruler from "./Ruler.svelte";
   import type { Engraving } from "./types.ts";
 
@@ -11,6 +11,8 @@
   class="flex fixed top-0 left-0 z-30 justify-center items-center w-screen h-screen"
 >
   <button
+    in:fade={{ duration: 200 }}
+    out:fade={{ duration: 100 }}
     on:click={onClose}
     class="fixed top-0 left-0 z-30 w-screen h-screen bg-black bg-opacity-50"
   />
