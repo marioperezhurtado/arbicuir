@@ -1,0 +1,74 @@
+<section class="mt-16 md:mt-20">
+  <div class="px-6">
+    <video
+      class="w-full max-w-screen-sm mx-auto rounded-md shadow-lg bg-ac-dark-2" 
+      autoplay muted loop playsinline controls
+    >
+      <source
+      src="https://res.cloudinary.com/marioperezhurtado/video/upload/v1705921513/arbicuir/videos/placas-solares-mp4.mp4"
+      type="video/mp4" />
+    </video>
+  </div>
+
+  <div class="flex rotate-180 lampcontainer -z-10">
+    <div
+      class="duration-1000 animate-none rotate-180 lamp translate-z-0 scale-[2.5] h-[200px] translate-y-[-50px] sm:translate-y-[-180px] sm:scale-[2] sm:h-[400px]" 
+      style="--bottom: #009ad2;"
+    />
+  </div>
+</section>
+
+<style>
+.lampcontainer {
+  position: relative;
+  margin-top: -330px;
+  contain: layout;
+  height: 420px;
+}
+
+.lamp {
+  width: 100%;
+  position: relative;
+  margin-bottom: -400px;
+  pointer-events: none;
+  user-select: none;
+  --background: 0, 0%, 14%;
+  --bottom: 0, 0%, 14%;
+  --first: conic-gradient(
+    from 90deg at 80% 50%,
+    hsl(var(--background)),
+    hsl(var(--background)),
+    var(--bottom)
+  );
+  --second: conic-gradient(
+    from 270deg at 20% 50%,
+    var(--bottom),
+    hsl(var(--background)),
+    hsl(var(--background))
+  );
+  -webkit-mask-image: radial-gradient(100% 50% at center center, black, transparent);
+  background-image: var(--first), var(--second);
+  background-attachment:;
+  background-origin:;
+  background-clip:;
+  background-color:;
+  background-position-x: 1%, 99%;
+  background-position-y: 0%, 0%;
+  background-size:
+    50% 100%,
+    50% 100%;
+  opacity: 1;
+  transform-origin: center center;
+  background-repeat: no-repeat;
+}
+
+.lamp::after {
+  content: '';
+  position: absolute;
+  inset: 0px 0px 50%;
+  overflow: hidden;
+  opacity: 0.1;
+  -webkit-mask-image: radial-gradient(140px 50% at 50% 100%, black, transparent);
+  mask-image: radial-gradient(140px 50% at 50% 100%, black, transparent);
+}
+</style>

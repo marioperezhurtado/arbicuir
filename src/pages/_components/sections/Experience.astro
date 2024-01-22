@@ -1,0 +1,31 @@
+---
+import { ADDRESS, EXPERIENCE } from "../../../utils/consts";
+import ButtonLink from "../../../components/ButtonLink.astro";
+---
+
+<section
+  class="flex flex-col gap-10 justify-between p-6 py-8 mt-32 shadow-md md:flex-row sm:p-8 sm:mx-8 sm:rounded-md md:mt-40 bg-ac-dark-2">
+  <div>
+    <h2 class="mb-2 text-2xl font-display text-ac-light">
+      Experiencia, trayectoria y profesionalidad.
+    </h2>
+    <p class="mt-5 mb-5 max-w-prose">
+      Con más de
+      <strong class="text-ac-light">
+        {EXPERIENCE}
+      </strong>
+      años de experiencia en el sector, en Arbicuir buscamos siempre la mejor calidad en nuestros productos y la excelencia en nuestros servicios.
+    </p>
+    <ButtonLink
+      title="Descubre nuestra historia"
+      href="/sobre-nosotros"
+    />
+  </div>
+  <div class="overflow-hidden rounded-md shadow-md min-w-fit w-fit h-fit">
+    <img
+          src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1702729118/arbicuir/factory.webp"
+      alt=`Fábrica de Arbicuir, ${ADDRESS}`
+      class="object-cover xs:h-60 md:h-40 lg:h-48 w-fit"
+    />
+  </div>
+</section>
