@@ -1,8 +1,7 @@
 ---
 import engravingData from '../../content/engravings.json';
 import Layout from '../../layouts/Layout.astro'
-import Category from './_components/Category.astro';
-import Engraving from './_components/Engraving.svelte';
+import Engravings from './_components/Engravings.svelte';
 
 export async function getStaticPaths() {
   return [
@@ -14,10 +13,18 @@ export async function getStaticPaths() {
   ]
 }
 
-const { category = "serpientes" } = Astro.params;
+const { category = "todos" } = Astro.params;
 
-const engravings = engravingData.filter(({ title }) => title === category);
-const categories = engravingData.map(({ title }) => title);
+const engravings = engravingData
+  .filter(({ title }) => category === "todos" || title === category)
+  .flatMap(({ engravings }) => engravings)
+  .sort((a, b) => a.title.localeCompare(b.title))
+
+
+const categories = [
+ "todos", 
+ ...engravingData.map(({ title }) => title)
+]
 ---
 
 <Layout
@@ -35,22 +42,12 @@ const categories = engravingData.map(({ title }) => title);
       </strong>
       únicos para adaptarnos a tus necesidades.
     </p>
-
-    <ul class="flex gap-2 mt-10 text-sm sm:gap-4 text-ac-light">
-      {categories.map((c) => (
-        <Category
-          title={c.slice(0, 1).toUpperCase() + c.slice(1)}
-          href={`/grabados/${c}`}
-          selected={category === c}
-        />
-      ))}
-   </ul>
-
-    <section class="grid grid-cols-2 gap-3 mt-14 w-full text-center sm:grid-cols-3 sm:gap-4 md:grid-cols-4"
-    >
-      {engravings[0]!.engravings.map((engraving) => (
-        <Engraving {engraving} client:idle/>
-      ))}
-    </section>
+    
+    <Engravings 
+      categories={categories}
+      engravings={engravings}
+      selectedCategory={category} 
+      client:load
+    />
   </main>
 </Layout>
