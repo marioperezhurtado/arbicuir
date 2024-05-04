@@ -1,12 +1,13 @@
 ---
 interface Props {
   collection: {
+    title: string
     colors: { title: string; url: string }[]
     engravings: { title: string; url: string }[]
   }
 }
 
-const { collection: { engravings, colors } } = Astro.props
+const { collection: { title: collectionTitle, engravings, colors } } = Astro.props
 ---
 
 <div class="flex flex-col gap-10 xs:flex-row">
@@ -16,7 +17,7 @@ const { collection: { engravings, colors } } = Astro.props
           <div class="overflow-hidden rounded-md shadow-md sm:w-52 md:w-72 aspect-video">
             <img
               src={url}
-              alt={title}
+              alt={`Grabado ${title} con acabado ${collectionTitle} de Arbicuir, S.L.`}
               class="object-cover w-full rounded-md duration-500 hover:scale-110 aspect-video"
             />
           </div>
@@ -31,7 +32,7 @@ const { collection: { engravings, colors } } = Astro.props
           <div class="overflow-hidden rounded-md shadow-md">
             <img
               src={url}
-              alt={title}
+              alt={`Grabado ${engravings.at(-1)!.title} con acabado ${collectionTitle} en color ${title} de Arbicuir, S.L.`}
               class="object-cover w-full rounded-md duration-500 hover:scale-110 aspect-video"
             />
           </div>

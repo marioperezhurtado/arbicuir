@@ -22,11 +22,11 @@
     bind:value={search}
     type="text"
     placeholder="Buscar por nombre"
-    class="pt-2.5 pb-1.5 pl-3 pr-9 rounded-md shadow-md text-sm bg-ac-dark-2 w-full placeholder-ac-light-2 focus:outline-none focus:ring-2 focus:ring-ac-lightblue"
+    class="pt-2.5 pr-9 pb-1.5 pl-3 w-full text-sm rounded-md shadow-md focus:ring-2 focus:outline-none bg-ac-dark-2 placeholder-ac-light-2 focus:ring-ac-lightblue"
   />
   <img
     src="/icons/search.svg"
     alt="Search icon"
-    class="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4"
+    class="absolute right-3 top-1/2 w-4 h-4 transform -translate-y-1/2"
   />
 </div>

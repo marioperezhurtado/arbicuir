@@ -22,7 +22,7 @@
   >
     <img
       src={engraving.url}
-      alt={engraving.title}
+      alt={`Grabado ${engraving.title} de Arbicuir, S.L.`}
       class="object-cover h-[70vh] max-h-[704px] bg-ac-dark-2"
     />
     <p

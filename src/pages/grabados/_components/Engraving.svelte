@@ -13,6 +13,7 @@
   }
 
   function handleOpen() {
+    console.log("open");
     history.pushState({}, "", `?grabado=${engraving.title}`);
     expanded = true;
   }
@@ -25,14 +26,20 @@
   });
 </script>
 
-<div class="h-fit">
+<div class="relative h-fit">
+  {#if engraving.new}
+    <span class="absolute top-2 right-2 z-10 px-2 pt-1 text-xs font-bold tracking-wide text-white uppercase bg-red-500 rounded-full">
+      Novedad
+    </span>
+  {/if}
+
   <button
     on:click={handleOpen}
     class="block overflow-hidden w-full rounded-md shadow-md aspect-video"
   >
     <img
       src={engraving.preview}
-      alt={engraving.title}
+      alt={`Vista previa grabado ${engraving.title} de Arbicuir, S.L.`}
       class="object-cover w-full rounded-md duration-500 hover:scale-110 aspect-video"
     />
   </button>
