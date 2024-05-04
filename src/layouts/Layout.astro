@@ -1,5 +1,6 @@
 ---
 import Footer from '../pages/_components/Footer.astro'
+import NewsBanner from '../pages/_components/header/NewsBanner.astro'
 import Header from '../pages/_components/header/Header.astro'
 import ScrollTop from '../pages/_components/ScrollTop.svelte'
 
@@ -61,6 +62,7 @@ const {
   <body
     class="flex overflow-auto flex-col justify-between h-screen bg-ac-dark text-ac-light-2 font-body">
     <div>
+      <NewsBanner />
       <Header />
       <slot />
     </div>

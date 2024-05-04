@@ -11,8 +11,8 @@
   let filteredEngravings = engravings;
 </script>
 
-<div class="flex flex-wrap justify-between gap-x-10 gap-y-6 items-center pt-10">
-  <ul class="flex gap-2 text-sm sm:gap-4 text-ac-light flex-wrap">
+<div class="flex flex-wrap gap-y-6 gap-x-10 justify-between items-center pt-10">
+  <ul class="flex flex-wrap gap-2 text-sm sm:gap-4 text-ac-light">
     {#each categories as c}
       <Category
         title={c.slice(0, 1).toUpperCase() + c.slice(1)}

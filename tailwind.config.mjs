@@ -18,6 +18,7 @@ export default {
         body: ['Body', ...defaultTheme.fontFamily.sans]
       },
       screens: {
+        xxs: '400px',
         xs: '475px'
       }
     },
