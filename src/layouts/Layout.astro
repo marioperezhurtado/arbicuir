@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions'
 import Footer from '../pages/_components/Footer.astro'
 import NewsBanner from '../pages/_components/header/NewsBanner.astro'
 import Header from '../pages/_components/header/Header.astro'
@@ -58,6 +59,8 @@ const {
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
+
+    <ViewTransitions />
   </head>
   <body
     class="flex overflow-auto flex-col justify-between h-screen bg-ac-dark text-ac-light-2 font-body">
