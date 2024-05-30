@@ -10,7 +10,7 @@ interface Props {
 const { collection: { title: collectionTitle, engravings, colors } } = Astro.props
 ---
 
-<div class="flex flex-col gap-10 xs:flex-row">
+<div class="flex flex-col gap-10 xs:items-start xs:flex-row">
   <div class="flex flex-col gap-3 text-center sm:gap-4 text-ac-light">
     {engravings.map(({ url, title }) => (
         <div>
