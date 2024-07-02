@@ -13,7 +13,6 @@
   }
 
   function handleOpen() {
-    console.log("open");
     history.pushState({}, "", `?grabado=${engraving.title}`);
     expanded = true;
   }
