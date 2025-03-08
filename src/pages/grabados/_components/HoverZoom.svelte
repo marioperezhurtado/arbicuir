@@ -5,7 +5,7 @@
   export let engraving: Engraving;
 
   const ZOOM_SCALE = 1.5;
-  const ZOOM_SIZE = 80;
+  const ZOOM_SIZE = 90;
 
   let active = false;
   let mouseX = 0;
@@ -24,9 +24,9 @@
   });
 </script>
 
-{#if active}
+{#if active && mouseX && mouseY}
   <div 
-    class="absolute -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none border-[3px] border-ac-light/60"
+    class="absolute z-30 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none border-[3px] border-ac-light/60"
     style="
       width: {ZOOM_SIZE}px;
       height: {ZOOM_SIZE}px;
