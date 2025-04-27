@@ -19,7 +19,7 @@
   <span class="rotate-180">
     <img 
       src="/icons/angle.svg" 
-      alt="angle" 
+      alt="Volver arriba" 
       width="20"
       height="20" 
       class="rotate-180" 

@@ -1,8 +1,12 @@
 <script lang="ts">
+  import { fade } from "svelte/transition";
+  
   const RULER_HEIGHT = 40;
 </script>
 
 <div
+  in:fade={{ duration: 200 }}
+  out:fade={{ duration: 100 }}
   class="absolute bottom-0 flex flex-col-reverse h-full pl-5 pr-1 justify-evenly bg-ac-dark-2/60"
 >
   {#each { length: RULER_HEIGHT } as _, i}

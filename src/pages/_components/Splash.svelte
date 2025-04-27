@@ -19,7 +19,7 @@
 </script>
 
 {#if show}
-    <div out:fade class="fixed top-0 left-0 z-20 flex flex-col items-center justify-center w-screen h-screen p-5 bg-ac-dark/90 backdrop-blur-sm">
+    <div out:fade class="fixed top-0 left-0 z-30 flex flex-col items-center justify-center w-screen h-screen p-5 bg-ac-dark/90 backdrop-blur-sm">
         <img
           src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1700738060/arbicuir/isologo.webp"
           alt="Arbicuir logo"

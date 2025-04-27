@@ -26,7 +26,7 @@
   />
   <img
     src="/icons/search.svg"
-    alt="Search icon"
-    class="absolute right-3 top-1/2 w-4 h-4 transform -translate-y-1/2"
+    alt="Icono de búsqueda"
+    class="absolute w-4 h-4 transform -translate-y-1/2 right-3 top-1/2"
   />
 </div>
