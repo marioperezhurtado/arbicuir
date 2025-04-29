@@ -20,7 +20,7 @@
   }
 </script>
 
-<div class="absolute flex flex-col bottom-4 right-4">
+<div class="absolute flex-col hidden bottom-4 right-4 lg:flex">
     <button 
         on:click={zoomIn}
         disabled={scale >= MAX_SCALE}
