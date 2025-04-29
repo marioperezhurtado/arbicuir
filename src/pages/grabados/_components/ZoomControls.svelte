@@ -7,8 +7,6 @@
 
   export let scale: number;
 
-  $: console.log({scale});
-
   function zoomIn() {
     if (scale >= MAX_SCALE) return;
     scale = scale * SCALE_FACTOR, MAX_SCALE;
