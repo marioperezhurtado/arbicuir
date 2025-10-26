@@ -1,41 +1,42 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
-import NewsBanner from '../pages/_components/header/NewsBanner.astro'
-import Header from '../pages/_components/header/Header.astro'
-import Footer from '../pages/_components/Footer.astro'
-import ScrollTop from '../pages/_components/ScrollTop.svelte'
-import Splash from '../pages/_components/Splash.svelte'
+import { ClientRouter } from "astro:transitions";
+import NewsBanner from "@/pages/_components/header/NewsBanner.astro";
+import Header from "@/pages/_components/header/Header.astro";
+import Footer from "@/pages/_components/Footer.astro";
+import ScrollTop from "@/pages/_components/ScrollTop.svelte";
+import Splash from "@/pages/_components/Splash.svelte";
+import "@/styles/globals.css";
 
 interface Props {
-  title: string
-  description: string
-  image?: string
-  favicon?: string
+  title: string;
+  description: string;
+  image?: string;
+  favicon?: string;
 }
 
 const SITE_URL = "https://arbicuir.com";
 
 const DEFAULT_IMAGE =
-"https://res.cloudinary.com/marioperezhurtado/image/upload/v1700737657/arbicuir/social-image.webp"
+  "https://res.cloudinary.com/marioperezhurtado/image/upload/v1700737657/arbicuir/social-image.webp";
 
 const DEFAULT_FAVICON =
-"https://res.cloudinary.com/marioperezhurtado/image/upload/v1700737657/arbicuir/favicon.webp"
+  "https://res.cloudinary.com/marioperezhurtado/image/upload/v1700737657/arbicuir/favicon.webp";
 
-const { 
+const {
   title,
   description,
-  image = DEFAULT_IMAGE, 
-  favicon = DEFAULT_FAVICON 
-} = Astro.props
+  image = DEFAULT_IMAGE,
+  favicon = DEFAULT_FAVICON,
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" class="overflow-auto scroll-smooth">
   <head>
     <!-- Global Metadata -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="icon" type="image/webp" href={favicon}/>
+    <link rel="icon" type="image/webp" href={favicon} />
     <meta property="site_name" content="arbicuir.com" />
     <meta name="author" content="Mario Pérez Hurtado" />
 
@@ -61,10 +62,11 @@ const {
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
 
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body
-    class="flex flex-col justify-between h-screen overflow-auto bg-ac-dark text-ac-light-2 font-body">
+    class="flex flex-col justify-between h-screen overflow-auto bg-ac-dark text-ac-light-2 font-body"
+  >
     <div>
       <NewsBanner />
       <Header />
@@ -73,15 +75,15 @@ const {
     <Footer />
     <style is:global>
       @font-face {
-        font-family: 'Body';
-        src: url('/fonts/body.woff2') format('woff2');
+        font-family: "Body";
+        src: url("/fonts/body.woff2") format("woff2");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
       }
       @font-face {
-        font-family: 'Display';
-        src: url('/fonts/display.woff2') format('woff2');
+        font-family: "Display";
+        src: url("/fonts/display.woff2") format("woff2");
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -92,7 +94,6 @@ const {
         -webkit-tap-highlight-color: transparent;
       }
     </style>
-  </body>
-  <ScrollTop client:idle />
+  </body><ScrollTop client:idle />
   <Splash client:only="svelte" />
 </html>

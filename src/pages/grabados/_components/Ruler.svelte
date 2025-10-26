@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  
+
   const RULER_HEIGHT = 40;
 </script>
 
@@ -18,7 +18,7 @@
         class="mb-0.5 rounded-md h-[3px] bg-ac-light/60"
         class:w-4={i % 2 === 0}
         class:w-8={i % 2 !== 0}
-      />
+      ></div>
     </div>
   {/each}
 </div>

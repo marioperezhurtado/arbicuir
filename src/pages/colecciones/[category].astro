@@ -1,49 +1,51 @@
 ---
-import springSummer from "../../content/spring-summer.json";
-import autumnWinter from "../../content/autumn-winter.json";
-import laminates from "../../content/laminates.json";
-import Layout from "../../layouts/Layout.astro";
+import springSummer from "@/content/spring-summer.json";
+import autumnWinter from "@/content/autumn-winter.json";
+import laminates from "@/content/laminates.json";
+import Layout from "@/layouts/Layout.astro";
 import Collection from "./_components/Collection.astro";
 
 export async function getStaticPaths() {
   return [
-    { 
-      params: { category: "primavera-verano"}, 
-      props: { title: "Primavera/Verano", collections: springSummer}
+    {
+      params: { category: "primavera-verano" },
+      props: { title: "Primavera/Verano", collections: springSummer },
     },
-    { 
-      params: { category: "otono-invierno"}, 
-      props: { title: "Otoño/Invierno", collections: autumnWinter }
+    {
+      params: { category: "otono-invierno" },
+      props: { title: "Otoño/Invierno", collections: autumnWinter },
     },
-     { 
-      params: { category: "laminados"},
-      props: { title: "Laminados", collections: laminates }
+    {
+      params: { category: "laminados" },
+      props: { title: "Laminados", collections: laminates },
     },
-  ]
+  ];
 }
 
 const { title, collections } = Astro.props;
 ---
 
-<Layout 
-  title={`${title} | Arbicuir, S.L.`} 
+<Layout
+  title={`${title} | Arbicuir, S.L.`}
   description="Explora las colecciones de Arbicuir, S.L. y descubre las últimas tendencias en moda en piel."
 >
-  <main class="px-6 mx-auto max-w-screen-xl sm:px-8">
+  <main class="px-6 mx-auto max-w-5xl sm:px-8">
     <h2 class="text-lg sm:text-xl">Colecciones</h2>
     <h1 class="mt-2 text-3xl sm:text-4xl text-ac-light font-display">
       {title}
     </h1>
 
-    {collections.map((collection) => (
-      <section class="mt-10 sm:mt-14">
-        {collections.length > 1 && (
-          <h2 class="mb-5 text-2xl font-display text-ac-light">
-            {collection.title}
-          </h2>
-        )}
-        <Collection {collection} />
-      </section>
-    ))}
+    {
+      collections.map((collection) => (
+        <section class="mt-10 sm:mt-14">
+          {collections.length > 1 && (
+            <h2 class="mb-5 text-2xl font-display text-ac-light">
+              {collection.title}
+            </h2>
+          )}
+          <Collection {collection} />
+        </section>
+      ))
+    }
   </main>
 </Layout>

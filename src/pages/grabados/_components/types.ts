@@ -1,5 +1,5 @@
-import engravingData from '../../../content/engravings.json';
+import engravingData from "@/content/engravings.json";
 
-export type Engraving = typeof engravingData[number]["engravings"][number] & {
+export type Engraving = (typeof engravingData)[number]["engravings"][number] & {
   new: boolean;
 };

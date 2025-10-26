@@ -1,6 +1,6 @@
 <script lang="ts">
   import { fade, slide } from "svelte/transition";
-  import Dropdown from "../../../components/Dropdown.svelte";
+  import Dropdown from "@/components/Dropdown.svelte";
 
   let isOpen = false;
   let collectionsOpen = false;
@@ -28,8 +28,8 @@
       <div
         in:fade={{ duration: 200 }}
         out:fade={{ duration: 100 }}
-        class="fixed left-0 top-16 w-screen h-screen bg-black bg-opacity-50"
-      />
+        class="fixed left-0 top-16 w-screen h-screen bg-black/50"
+      ></div>
     {/if}
   </div>
 

@@ -1,16 +1,16 @@
 ---
-import engravingData from '../../content/engravings.json';
-import Layout from '../../layouts/Layout.astro'
-import Engravings from './_components/Engravings.svelte';
+import engravingData from "@/content/engravings.json";
+import Layout from "@/layouts/Layout.astro";
+import Engravings from "./_components/Engravings.svelte";
 
 export async function getStaticPaths() {
   return [
     { params: { category: undefined } },
     { params: { category: "serpientes" } },
-    { params: { category: "cocos" } }, 
+    { params: { category: "cocos" } },
     { params: { category: "naturales" } },
     { params: { category: "varios" } },
-  ]
+  ];
 }
 
 const { category = "todos" } = Astro.params;
@@ -18,35 +18,29 @@ const { category = "todos" } = Astro.params;
 const engravings = engravingData
   .filter(({ title }) => category === "todos" || title === category)
   .flatMap(({ engravings }) => engravings)
-  .sort((a, b) => a.title.localeCompare(b.title))
+  .sort((a, b) => a.title.localeCompare(b.title));
 
-
-const categories = [
- "todos", 
- ...engravingData.map(({ title }) => title)
-]
+const categories = ["todos", ...engravingData.map(({ title }) => title)];
 ---
 
 <Layout
   title="Grabados | Arbicuir S.L."
   description="Descubre nuestra amplia gama de grabados, con más de 120 diseños únicos para adaptarnos a tus necesidades."
 >
-  <main class="px-6 mx-auto max-w-screen-lg sm:px-8">
+  <main class="px-6 mx-auto max-w-5xl sm:px-8">
     <h1 class="mt-2 text-3xl sm:text-4xl text-ac-light font-display">
       Grabados
     </h1>
     <p class="mt-3 max-w-prose text-ac-light-2">
       Descubre nuestra amplia gama de grabados, con más de
-      <strong class="text-ac-light">
-        120 diseños
-      </strong>
+      <strong class="text-ac-light"> 120 diseños </strong>
       únicos para adaptarnos a tus necesidades.
     </p>
-    
-    <Engravings 
+
+    <Engravings
       categories={categories}
       engravings={engravings}
-      selectedCategory={category} 
+      selectedCategory={category}
       client:load
     />
   </main>

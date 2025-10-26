@@ -1,65 +1,68 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { ADDRESS, EXPERIENCE } from "../utils/consts";
+import Layout from "@/layouts/Layout.astro";
+import { ADDRESS, EXPERIENCE } from "@/utils/consts";
 ---
 
-<Layout 
-  title="Sobre Nosotros | Arbicuir S.L.",
+<Layout
+  title="Sobre Nosotros | Arbicuir S.L."
+  ,
   description="Fundada en 1995 por Juan José Arbizu Urdiain, Arbicuir es una empresa consolidada en el sector del acabado de pieles y sintéticos."
 >
   <main class="px-6 mx-auto max-w-3xl sm:px-8">
     <img
-    src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1702729118/arbicuir/factory.webp"
-    alt=`Fábrica de Arbicuir, ${ADDRESS}`
-    class="object-cover object-center mt-10 w-full rounded-md shadow-md sm:h-96"
+      src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1702729118/arbicuir/factory.webp"
+      alt=`Fábrica de Arbicuir, ${ADDRESS}`
+      class="object-cover object-center mt-10 w-full rounded-md shadow-md sm:h-96"
     />
 
     <ul class="flex flex-col gap-12 mt-16 max-w-prose text-ac-light-2">
       <li class="flex flex-col gap-3">
         <div class="flex gap-2.5 items-center">
-          <img 
-            src="/icons/history.svg" 
-            alt="Nuestra historia" 
+          <img
+            src="/icons/history.svg"
+            alt="Nuestra historia"
             class="mb-1 w-5 h-5"
           />
           <h2 class="text-xl text-ac-light font-display">Sobre nosotros</h2>
         </div>
         <p>
           Fundada en 1995 por Juan José Arbizu Urdiain, Arbicuir es una empresa
-      consolidada en el sector del acabado de pieles y sintéticos.
+          consolidada en el sector del acabado de pieles y sintéticos.
         </p>
         <p>
-          Contamos con productos de calidad contrastada durante años, además de nuevos productos para los acabados de vanguardia.
-        </p>
-      </li>
-      
-      <li class="flex flex-col gap-3">
-        <div class="flex gap-2.5 items-center">
-          <img 
-            src="/icons/team.svg" 
-            alt="Equipo humano" 
-            class="mb-1 w-5 h-5"
-          />
-          <h2 class="text-xl text-ac-light font-display">Equipo humano</h2>
-        </div>
-        <p>
-          El equipo humano formado en Arbicuir cuenta con una alta especialización en el mundo del acabado, capaz de adaptarse a las distintas necesidades de los diferentes mercados.
+          Contamos con productos de calidad contrastada durante años, además de
+          nuevos productos para los acabados de vanguardia.
         </p>
       </li>
 
       <li class="flex flex-col gap-3">
         <div class="flex gap-2.5 items-center">
-          <img 
-            src="/icons/mission.svg" 
+          <img src="/icons/team.svg" alt="Equipo humano" class="mb-1 w-5 h-5" />
+          <h2 class="text-xl text-ac-light font-display">Equipo humano</h2>
+        </div>
+        <p>
+          El equipo humano formado en Arbicuir cuenta con una alta
+          especialización en el mundo del acabado, capaz de adaptarse a las
+          distintas necesidades de los diferentes mercados.
+        </p>
+      </li>
+
+      <li class="flex flex-col gap-3">
+        <div class="flex gap-2.5 items-center">
+          <img
+            src="/icons/mission.svg"
             alt="Nuestra misión"
             class="mb-1 w-5 h-5"
           />
           <h2 class="text-xl text-ac-light font-display">Nuestra misión</h2>
         </div>
         <p>
-          Con más de {EXPERIENCE} años de experiencia en el sector, en Arbicuir trabajamos constantemente con el objetivo de ofrecer a nuestros clientes los diseños más avanzados, buscando siempre la excelencia en nuestros servicios y el arte en nuestros acabados.
+          Con más de {EXPERIENCE} años de experiencia en el sector, en Arbicuir trabajamos
+          constantemente con el objetivo de ofrecer a nuestros clientes los diseños
+          más avanzados, buscando siempre la excelencia en nuestros servicios y el
+          arte en nuestros acabados.
         </p>
       </li>
-   </ul>
+    </ul>
   </main>
 </Layout>

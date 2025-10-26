@@ -1,11 +1,11 @@
 <script lang="ts">
-  let show = false
+  let show = false;
 
   function handleScrollTop() {
     document.body.scrollTo({
       top: 0,
-      behavior: 'smooth'
-    })
+      behavior: "smooth",
+    });
   }
 </script>
 
@@ -17,12 +17,12 @@
   class:opacity-0={!show}
 >
   <span class="rotate-180">
-    <img 
-      src="/icons/angle.svg" 
-      alt="Volver arriba" 
+    <img
+      src="/icons/angle.svg"
+      alt="Volver arriba"
       width="20"
-      height="20" 
-      class="rotate-180" 
+      height="20"
+      class="rotate-180"
     />
   </span>
 </button>

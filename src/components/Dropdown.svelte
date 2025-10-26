@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { fade } from 'svelte/transition'
+  import { fade } from "svelte/transition";
 
-  export let isOpen: boolean
-  export let title: string
+  export let isOpen: boolean;
+  export let title: string;
 
   function clickOutside(
     node: HTMLElement,
@@ -10,17 +10,17 @@
   ) {
     const handleClick = (evt: MouseEvent) => {
       if (!node.contains(evt.target as Node)) {
-        callback(evt)
+        callback(evt);
       }
-    }
+    };
 
-    document.addEventListener('click', handleClick)
+    document.addEventListener("click", handleClick);
 
     return {
       destroy() {
-        document.removeEventListener('click', handleClick)
-      }
-    }
+        document.removeEventListener("click", handleClick);
+      },
+    };
   }
 </script>
 

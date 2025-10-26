@@ -1,12 +1,12 @@
 <script lang="ts">
-  import Dropdown from "../../../components/Dropdown.svelte";
-  
-  export let collections: { href: string, title: string }[] = []
+  import Dropdown from "@/components/Dropdown.svelte";
 
-  let isOpen = false
+  export let collections: { href: string; title: string }[] = [];
+
+  let isOpen = false;
 </script>
 
-<Dropdown bind:isOpen={isOpen} title="Mostrar todas las colecciones">
+<Dropdown bind:isOpen title="Mostrar todas las colecciones">
   <span
     slot="trigger"
     class="flex gap-0.5 items-center px-2.5 pt-2 pb-1 rounded-md transition hover:shadow-md min-w-fit hover:bg-ac-darkblue"
@@ -23,7 +23,7 @@
       class:rotate-180={!isOpen}
     />
   </span>
-  <ul 
+  <ul
     slot="content"
     class="overflow-hidden absolute left-0 top-10 text-sm rounded-md shadow-md bg-ac-darkblue min-w-fit"
   >
@@ -34,8 +34,8 @@
           {href}
         >
           {title}
-      </a>
-    </li>
+        </a>
+      </li>
     {/each}
   </ul>
 </Dropdown>

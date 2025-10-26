@@ -27,7 +27,9 @@
 
 <div class="relative h-fit">
   {#if engraving.new}
-    <span class="absolute top-2 right-2 z-10 px-2 pt-1 text-xs font-bold tracking-wide text-white uppercase bg-red-500 rounded-full">
+    <span
+      class="absolute top-2 right-2 z-10 px-2 pt-1 text-xs font-bold tracking-wide text-white uppercase bg-red-500 rounded-full"
+    >
       Novedad
     </span>
   {/if}

@@ -36,7 +36,7 @@
     class="flex overflow-x-auto gap-4 h-28 sm:gap-8"
   >
     {#each products as { title, url }}
-      <li class="overflow-hidden h-28 rounded-md shadow-sm min-w-[10rem]">
+      <li class="overflow-hidden h-28 rounded-md shadow-sm min-w-40">
         <img
           src={url}
           alt={title}

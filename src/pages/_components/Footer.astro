@@ -1,12 +1,15 @@
 ---
-import { ADDRESS, EMAIL, PHONE } from '../../utils/consts'
+import { ADDRESS, EMAIL, PHONE } from "@/utils/consts";
 
-const currentYear = new Date().getFullYear()
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="mt-32 w-full text-center shadow-md md:mt-40 bg-ac-darkblue xs:text-left">
+<footer
+  class="mt-32 w-full text-center shadow-md md:mt-40 bg-ac-darkblue xs:text-left"
+>
   <div
-    class="flex flex-col gap-6 justify-between px-4 my-6 mx-auto w-full max-w-screen-lg sm:px-8 md:flex-row md:gap-10 md:my-10">
+    class="flex flex-col gap-6 justify-between px-4 my-6 mx-auto w-full max-w-5xl sm:px-8 md:flex-row md:gap-10 md:my-10"
+  >
     <div class="mx-auto xs:mx-0">
       <a href="/" class="block py-1">
         <img
@@ -17,45 +20,44 @@ const currentYear = new Date().getFullYear()
       </a>
     </div>
     <div
-      class="flex flex-col flex-1 gap-6 justify-start md:gap-14 md:justify-end xs:flex-row xs:gap-8">
+      class="flex flex-col flex-1 gap-6 justify-start md:gap-14 md:justify-end xs:flex-row xs:gap-8"
+    >
       <div class="md:w-52">
-        <h3 class="font-display text-ac-light">
-          Dónde encontrarnos
-        </h3>
+        <h3 class="font-display text-ac-light">Dónde encontrarnos</h3>
         <p class="mx-auto mt-2 max-w-xs text-sm xs:mx-0">{ADDRESS}</p>
       </div>
       <div>
-        <h3 class="font-display text-ac-light">
-          Contacto
-        </h3>
+        <h3 class="font-display text-ac-light">Contacto</h3>
         <div class="mt-2 text-sm">
           <a
             href=`mailto:${EMAIL}`
-            class="block underline transition hover:text-ac-light">
+            class="block underline transition hover:text-ac-light"
+          >
             {EMAIL}
           </a>
           <a
             href=`tel:${PHONE}`
-            class="block underline transition hover:text-ac-light">
+            class="block underline transition hover:text-ac-light"
+          >
             {PHONE}
           </a>
         </div>
       </div>
       <div>
-        <h3 class="font-display text-ac-light">
-          Síguenos
-        </h3>
+        <h3 class="font-display text-ac-light">Síguenos</h3>
         <div class="mt-2 text-sm">
           <a
             href="https://m.facebook.com/people/ARBICUIRsl/100064966725589/"
             target="_blank"
-            class="block underline transition hover:text-ac-light">
+            class="block underline transition hover:text-ac-light"
+          >
             Facebook
           </a>
           <a
             href="https://www.instagram.com/arbicuirsl/"
             target="_blank"
-            class="block underline transition hover:text-ac-light">
+            class="block underline transition hover:text-ac-light"
+          >
             Instagram
           </a>
         </div>
@@ -63,17 +65,10 @@ const currentYear = new Date().getFullYear()
     </div>
   </div>
 
-  <div class="px-4 my-6 mx-auto max-w-screen-lg sm:px-8 md:my-10">
-    <img
-      src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1702541304/arbicuir/kit-digital-banner.webp"
-      alt="Kit digital Arbicuir"
-      class="w-full rounded-md shadow-md"
-    />
-  </div>
-
   <div class="py-4 text-sm bg-ac-dark-2">
     <div
-      class="flex flex-col gap-2 justify-between items-center px-4 mx-auto w-full max-w-screen-lg sm:px-8 xs:flex-row">
+      class="flex flex-col gap-2 justify-between items-center px-4 mx-auto w-full max-w-5xl sm:px-8 xs:flex-row"
+    >
       <p class="pt-1.5">
         © {currentYear} ARBICUIR S.L. Todos los derechos reservados.
       </p>
@@ -91,10 +86,7 @@ const currentYear = new Date().getFullYear()
           </a>
         </li>
         <li>
-          <a
-            href="https://www.instagram.com/arbicuirsl/"
-            target="_blank"
-          >
+          <a href="https://www.instagram.com/arbicuirsl/" target="_blank">
             <img
               src="/icons/instagram.svg"
               alt="Instagram Arbicuir S.L."

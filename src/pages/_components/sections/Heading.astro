@@ -1,30 +1,28 @@
 ---
-import ButtonLink from "../../../components/ButtonLink.astro";
+import ButtonLink from "@/components/ButtonLink.astro";
 ---
 
 <section class="flex flex-col gap-14 justify-between px-6 sm:px-8 md:flex-row">
   <div>
     <h1
-      class="max-w-xl text-3xl sm:text-4xl lg:text-5xl text-ac-light font-display">
+      class="max-w-xl text-3xl sm:text-4xl lg:text-5xl text-ac-light font-display"
+    >
       Acabados de pieles y materiales para calzado y marroquinería.
     </h1>
     <p class="mt-5 mb-5 max-w-prose sm:mt-8">
       Desde
-      <strong class="text-ac-light">
-        1995
-      </strong>
-      , nos dedicamos al acabado de pieles y sintéticos, trabajando con el
-      objetivo de ofrecer una gran variedad de diseños innovadores y de
-      calidad.
+      <strong class="text-ac-light"> 1995 </strong>
+      , nos dedicamos al acabado de pieles y sintéticos, trabajando con el objetivo
+      de ofrecer una gran variedad de diseños innovadores y de calidad.
     </p>
-    <ButtonLink 
-      title="Explora nuestras colecciones" 
+    <ButtonLink
+      title="Explora nuestras colecciones"
       href="/colecciones/primavera-verano"
     />
   </div>
   <div class="hidden md:block">
     <img
-          src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1704711050/arbicuir/showcase/main.webp"
+      src="https://res.cloudinary.com/marioperezhurtado/image/upload/v1704711050/arbicuir/showcase/main.webp"
       alt="Acabado en piel Arbicuir"
       draggable={false}
       class="object-cover rounded-md shadow-md h-fit"

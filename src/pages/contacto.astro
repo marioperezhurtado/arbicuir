@@ -1,16 +1,14 @@
 ---
-import { EMAIL, PHONE } from "../utils/consts";
-import Layout from "../layouts/Layout.astro";
+import { EMAIL, PHONE } from "@/utils/consts";
+import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout
   title="Contacto | Arbicuir S.L."
   description="Nuestros profesionales estarán a tu disposición para resolver cualquier duda que tengas, asesorándote en todo momento para brindarte el mejor servicio posible."
 >
-  <main class="px-6 mx-auto max-w-screen-lg sm:px-8">
-    <h1 class="text-3xl sm:text-4xl font-display text-ac-light">
-      Contáctanos
-    </h1>
+  <main class="px-6 mx-auto max-w-5xl sm:px-8">
+    <h1 class="text-3xl sm:text-4xl font-display text-ac-light">Contáctanos</h1>
     <p class="mt-3 max-w-prose text-ac-light-2">
       Nuestros profesionales estarán a tu disposición para resolver cualquier
       duda que tengas, asesorándote en todo momento para brindarte el mejor
@@ -18,13 +16,17 @@ import Layout from "../layouts/Layout.astro";
     </p>
     <div class="gap-10 mt-10 md:flex">
       <ul class="flex flex-col gap-4 w-52 text-sm">
-        <li class="flex gap-2 items-center p-4 w-full rounded-md shadow-md transition sm:gap-4 bg-ac-darkblue hover:brightness-125">
+        <li
+          class="flex gap-2 items-center p-4 w-full rounded-md shadow-md transition sm:gap-4 bg-ac-darkblue hover:brightness-125"
+        >
           <img src="/icons/phone.svg" alt="Teléfono" class="w-5 h-5" />
           <a href={`tel:${PHONE}`} class="mt-1 text-ac-light">
             {PHONE}
           </a>
         </li>
-        <li class="flex gap-2 items-center p-4 rounded-md shadow-md transition sm:gap-4 bg-ac-darkblue hover:brightness-125">
+        <li
+          class="flex gap-2 items-center p-4 rounded-md shadow-md transition sm:gap-4 bg-ac-darkblue hover:brightness-125"
+        >
           <img src="/icons/email.svg" alt="Email" class="w-5 h-5" />
           <a href={`tel:${PHONE}`} class="mt-1 text-ac-light">
             {EMAIL}
@@ -41,7 +43,8 @@ import Layout from "../layouts/Layout.astro";
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        class="flex-1 mt-10 w-full h-96 rounded-md shadow-md md:mt-0 bg-ac-light-2">
+        class="flex-1 mt-10 w-full h-96 rounded-md shadow-md md:mt-0 bg-ac-light-2"
+      >
       </iframe>
     </div>
   </main>
